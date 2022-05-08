@@ -1,0 +1,107 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #1e1e1e !important;
+}
+#root {
+  height: 100%;
+  display: flex;
+  > .ant-tree {
+    width: 240px;
+    background: #2e2e2e;
+    overflow: hidden auto;
+    .ant-tree-iconEle > svg {
+      width: 18px;
+      height: 24px;
+    }
+    .ant-tree-treenode-selected {
+      background: rgba(23, 125, 220, 0.3);
+    }
+    .ant-tree-treenode-selected::before {
+      background: none;
+    }
+    .ant-tree-switcher {
+      background: none;
+    }
+    .ant-tree-switcher-noop {
+      visibility: hidden;
+      width: 14px;
+    }
+    .ant-tree-node-content-wrapper {
+      padding-left: 0;
+      display: flex;
+    }
+    .ant-tree-node-content-wrapper .ant-tree-title {
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100px;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
+    &.ant-tree-directory .ant-tree-treenode:hover .ant-tree-switcher {
+      background: none;
+    }
+  }
+
+  > #editor {
+    flex: 1;
+    position: relative;
+    > section {
+      padding-top: 65px;
+    }
+    > .ant-tabs {
+      position: absolute;
+      top: 0;
+      left: -1px;
+      z-index: 1;
+      background: #2e2e2e;
+      width: 100%;
+    }
+    .ant-tabs-tab {
+      padding-left: 10px;
+      padding-right: 2px;
+    }
+    .ant-tabs-tab:hover {
+      color: rgba(255, 255, 255, 0.85);
+    }
+    > .ant-breadcrumb {
+      position: absolute;
+      top: 36px;
+      left: 0;
+      z-index: 1;
+      background: #1e1e1e;
+      width: 100%;
+      padding-bottom: 3px;
+    }
+    > .ant-breadcrumb > ol {
+      margin: 0;
+      padding-left: 12px;
+    }
+
+    .ant-breadcrumb-link > svg {
+      padding-top: 2px;
+      width: 16px;
+      height: 18px;
+      margin-right: 4px;
+    }
+    .icon-crumb {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+/* scrollbar */
+
+*::-webkit-scrollbar {
+  width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+  background: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(102, 102, 102, 0.3);
+}
