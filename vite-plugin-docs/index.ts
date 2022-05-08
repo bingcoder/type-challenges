@@ -71,7 +71,7 @@ function dirToTree(dir: string[]) {
   const fileList: any = [];
   dirs.forEach((item) => {
     const stat = fs.statSync(path.resolve(...dir, item));
-    const key = `file:///${dir.join('/')}/${item}`.replace('/docs', '');
+    const key = `file:///${dir.join('/')}/${item}`.replace('/code', '');
     if (stat.isDirectory()) {
       directoryList.push({
         key,
@@ -92,7 +92,7 @@ function dirToTree(dir: string[]) {
   return [...directoryList, ...fileList];
 }
 
-function genDocTree(dir = 'docs'): Plugin {
+function genDocTree(dir = 'code'): Plugin {
   const pluginName = 'docs-tree-generator';
   const docsPath = path.resolve(dir);
   const virtualModuleId = `virtual:${pluginName}`;
