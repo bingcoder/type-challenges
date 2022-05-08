@@ -5,6 +5,7 @@ import genDocTree from './vite-plugin-docs';
 const { getThemeVariables } = require('antd/dist/theme');
 
 export default defineConfig({
+  base: './',
   build: {
     outDir: 'docs',
   },
